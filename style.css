@@ -130,10 +130,22 @@ body {
 }
 
 @media print {
-  .two-column {
-    break-inside: avoid;
+  body {
+    font-size: 10pt; /* Slightly smaller font for print */
   }
+
+  .header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    break-after: avoid; /* Avoid a page break after the header */
+    break-inside: avoid; /* Avoid a page break inside the header */
+  }
+
+  .two-column {
+    break-inside: avoid; /* Avoid breaking the two columns themselves */
+  }
+
   .section {
-    break-inside: avoid;
+    break-inside: avoid; /* Avoid breaking inside a section */
   }
 }
